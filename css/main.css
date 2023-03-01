@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+:root {
+  /* primary colors */
+  --orange: hsl(25, 97%, 53%);
+  /* neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(217, 12%, 63%);
+  --medium-gray: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  /* font */
+  --FF: "Overpass", sans-serif;
+
+  --transition: 0.3s ease-in-out all;
+}
+/* global styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  background: var(--very-dark-blue);
+  min-height: 100vh;
+  color: var(--white);
+  font-family: var(--FF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  /* background: var(--dark-blue); */
+  min-width: 300px;
+  width: 90vw;
+  max-width: 412px;
+  border-radius: 15px;
+  background: radial-gradient(
+    98.96% 98.96% at 50% 0%,
+    #232a34 0%,
+    #181e27 100%
+  );
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+/* card header */
+.card-header {
+  margin-bottom: 0.625rem;
+}
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--dark-blue);
+  border-radius: 50%;
+  display: inline-flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.card-header h2 {
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.875rem;
+  font-size: 1.5rem;
+}
+
+/* card content */
+
+.card-content {
+  color: var(--medium-gray);
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+.card-content p {
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+.card-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 19rem;
+  /* margin: 0 auto; */
+}
+.card-link {
+  width: 2.625rem;
+  height: 2.625rem;
+  background: var(--dark-blue);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: var(--transition);
+}
+
+.card-link.active {
+  background: var(--medium-gray);
+  color: var(--white);
+}
+.card-link:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+/* button */
+.card-btn {
+  letter-spacing: 1.86667px;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  border-radius: 1.375rem;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  background: var(--orange);
+  padding: 0.75rem;
+  transition: var(--transition);
+}
+.card-btn:hover {
+  color: var(--orange);
+  background: var(--white);
+}
+
+/* submited card */
+.submited-card {
+  text-align: center;
+}
+.submited-card-image {
+  width: 9rem;
+  margin-bottom: 1.5rem;
+}
+.given-rating {
+  font-size: 0.875rem;
+  color: var(--orange);
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--dark-blue);
+  border-radius: 22px;
+  line-height: 22px;
+  border: none;
+}
+.submited-card-content,
+.submited-card-content p {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card-btn {
+    line-height: 19px;
+    letter-spacing: 2px;
+  }
+  .card,
+  .submited-card {
+    border-radius: 30px;
+    padding: 2rem;
+  }
+  .icon {
+    margin-bottom: 30px;
+  }
+  .card-header h2,
+  .submited-card-header h2 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+  .submited-card-image,
+  .given-rating {
+    margin-bottom: 2rem;
+  }
+  /* card content */
+  .card-content {
+    margin-bottom: 2rem;
+  }
+  .submited-card-content {
+    margin-bottom: 0;
+  }
+  .card-content p,
+  .submited-card-content p {
+    font-size: 15px;
+    line-height: 1.5rem;
+  }
+  .card-links {
+    max-width: none;
+  }
+  .card-link {
+    width: 51px;
+    height: 51px;
+    font-size: 1rem;
+  }
+}
